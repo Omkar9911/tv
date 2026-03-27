@@ -1,0 +1,15 @@
+#EXTM3U x-tvg-url="https://example.com/epg.xml.gz"
+# ═══════════════════════════════════════
+#  📡 StreamFlex Pvt
+#  🕐 Last Updated : 27 Mar 2026, 11:02 AM IST
+#  💬 Support TG      : t.me/StreamFlex19
+#  ⚠️ Use only authorized streams.
+# ═══════════════════════════════════════
+
+# ========== Entertainment ==========
+#EXTINF:-1 tvg-logo="https://example.com/logo.png" group-title="Entertainment",Example Channel HD
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#EXTVLCOPT:http-user-agent=MyPlayer/1.0
+#EXTHTTP:{"header":"value"}
+https://example.com/live/manifest.mpd
+

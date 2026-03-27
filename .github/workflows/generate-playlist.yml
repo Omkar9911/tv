@@ -1,0 +1,57 @@
+name: Generate playlist.m3u
+
+on:
+  schedule:
+    # 07:00 AM IST (Asia/Kolkata) = 01:30 UTC
+    - cron: "30 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+
+      - name: Detect project directory
+        id: detect
+        run: |
+          if [ -f "pom.xml" ]; then
+            echo "workdir=." >> "$GITHUB_OUTPUT"
+          else
+            echo "workdir=StreamFlexM3UJava" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build
+        run: |
+          cd "${{ steps.detect.outputs.workdir }}"
+          chmod +x mvnw
+          ./mvnw -q -DskipTests package
+
+      - name: Generate M3U
+        run: |
+          cd "${{ steps.detect.outputs.workdir }}"
+          java -jar target/streamflex-m3u-generator-0.1.0.jar --config=channels.yml --output=docs/playlist.m3u
+
+      - name: Copy to repo root docs (GitHub Pages)
+        run: |
+          mkdir -p docs
+          cp "${{ steps.detect.outputs.workdir }}/docs/playlist.m3u" docs/playlist.m3u
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/playlist.m3u
+          git diff --staged --quiet || git commit -m "Update playlist.m3u"
+          git push

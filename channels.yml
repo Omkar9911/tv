@@ -1,0 +1,33 @@
+playlist:
+  epgUrl: "https://example.com/epg.xml.gz"
+  title: "StreamFlex Pvt"
+  support: "t.me/StreamFlex19"
+  timezone: "Asia/Kolkata"
+  lastUpdatedFormat: "dd MMM uuuu, hh:mm a z"
+  groupSections: true
+  groupHeaderTemplate: "# ========== {{group}} =========="
+  groupOrder:
+    - "Entertainment"
+    - "Movies"
+    - "Sports"
+    - "Kids"
+    - "Regional"
+    - "News"
+    - "Music"
+  headerLines:
+    - "# ═══════════════════════════════════════"
+    - "#  📡 StreamFlex Pvt"
+    - "#  🕐 Last Updated : {{lastUpdated}}"
+    - "#  💬 Support TG      : t.me/StreamFlex19"
+    - "#  ⚠️ Use only authorized streams."
+    - "# ═══════════════════════════════════════"
+
+channels:
+  - name: "Example Channel HD"
+    groupTitle: "Entertainment"
+    tvgLogo: "https://example.com/logo.png"
+    url: "https://example.com/live/manifest.mpd"
+    vlcUserAgent: "MyPlayer/1.0"
+    kodiProps:
+      - "inputstream.adaptive.license_type=clearkey"
+    extHttp: "{\"header\":\"value\"}"
