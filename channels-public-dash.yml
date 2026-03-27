@@ -10,10 +10,9 @@ playlist:
     - "Public Demo (DASH)"
   headerLines:
     - "# ═══════════════════════════════════════"
-    - "#  📡 StreamFlex Pvt"
+    - "#  📡 StreamFlex Pvt (Public Demo)"
     - "#  🕐 Last Updated : {{lastUpdated}}"
-    - "#  💬 Support TG      : t.me/StreamFlex19"
-    - "#  ⚠️ Use only authorized streams."
+    - "#  ⚠️ These are official public demo streams (mostly VOD), not paid TV channels."
     - "# ═══════════════════════════════════════"
 
 channels:
