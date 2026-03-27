@@ -1,5 +1,5 @@
 playlist:
-  epgUrl: "https://example.com/epg.xml.gz"
+  epgUrl: ""
   title: "StreamFlex Pvt"
   support: "t.me/StreamFlex19"
   timezone: "Asia/Kolkata"
@@ -7,27 +7,30 @@ playlist:
   groupSections: true
   groupHeaderTemplate: "# ========== {{group}} =========="
   groupOrder:
-    - "Entertainment"
-    - "Movies"
-    - "Sports"
-    - "Kids"
-    - "Regional"
-    - "News"
-    - "Music"
+    - "Public Demo (DASH)"
   headerLines:
     - "# ═══════════════════════════════════════"
-    - "#  📡 StreamFlex Pvt"
+    - "#  📡 StreamFlex Pvt (Public Demo)"
     - "#  🕐 Last Updated : {{lastUpdated}}"
-    - "#  💬 Support TG      : t.me/StreamFlex19"
-    - "#  ⚠️ Use only authorized streams."
+    - "#  ⚠️ These are official public demo streams (mostly VOD), not paid TV channels."
     - "# ═══════════════════════════════════════"
 
 channels:
-  - name: "Example Channel HD"
-    groupTitle: "Entertainment"
-    tvgLogo: "https://example.com/logo.png"
-    url: "https://example.com/live/manifest.mpd"
-    vlcUserAgent: "MyPlayer/1.0"
-    kodiProps:
-      - "inputstream.adaptive.license_type=clearkey"
-    extHttp: "{\"header\":\"value\"}"
+  - name: "Shaka Demo - Angel One"
+    groupTitle: "Public Demo (DASH)"
+    tvgLogo: "https://shaka-player-demo.appspot.com/assets/poster.jpg"
+    url: "https://storage.googleapis.com/shaka-demo-assets/angel-one/dash.mpd"
+
+  - name: "Shaka Demo - BBB Dark Truths"
+    groupTitle: "Public Demo (DASH)"
+    tvgLogo: "https://shaka-player-demo.appspot.com/assets/poster.jpg"
+    url: "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths/dash.mpd"
+
+  - name: "Bitmovin Demo - Sintel"
+    groupTitle: "Public Demo (DASH)"
+    tvgLogo: "https://cdn.bitmovin.com/content/assets/sintel/poster.png"
+    url: "https://cdn.bitmovin.com/content/assets/sintel/sintel.mpd"
+
+  - name: "Unified Streaming Demo - Tears of Steel"
+    groupTitle: "Public Demo (DASH)"
+    url: "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.mpd"
