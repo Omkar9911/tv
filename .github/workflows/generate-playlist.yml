@@ -55,3 +55,4 @@ jobs:
           git add docs/playlist.m3u
           git diff --staged --quiet || git commit -m "Update playlist.m3u"
           git push
+
